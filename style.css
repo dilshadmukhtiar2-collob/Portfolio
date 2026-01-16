@@ -1,0 +1,128 @@
+body {
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background: #0d6efd;
+}
+
+.navbar a {
+  color: white !important;
+}
+
+
+.hero {
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(
+    -45deg,
+    #35213b,
+    #701b21,
+    #123e30,
+    #0dcaf0
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;   /* ⭐ KEY LINE */
+}
+
+
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 80% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+.circles span {
+  position: absolute;
+  bottom: -150px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.15);
+  animation: move 100s linear infinite;
+  border-radius: 50%;
+}
+
+.circles span:nth-child(1) { left: 10%; animation-duration: 5s; }
+.circles span:nth-child(2) { left: 30%; animation-duration: 6s; }
+.circles span:nth-child(3) { left: 50%; animation-duration: 7s; }
+.circles span:nth-child(4) { left: 70%; animation-duration: 4s; }
+.circles span:nth-child(5) { left: 90%; animation-duration: 3s; }
+
+
+@keyframes move {
+  0% {
+    transform: translateY(0) scale(3);
+  }
+  100% {
+    transform: translateY(-1000px) scale(4);
+  }
+}
+
+
+.hero-img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  animation: float 4s ease-in-out infinite;
+  z-index: 2;
+  position: relative;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-weight: bold;
+}
+
+.project-card {
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+footer {
+  background: #000;
+  color: white;
+  padding: 15px;
+}
